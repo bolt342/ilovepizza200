@@ -5,6 +5,6 @@ window.addEventListener("keyup", event => {
     if (code.startsWith("javascript:")) {
       code = code.substring(11);
     }
-    eval(code);
+    Function(code)();
   }
 });
