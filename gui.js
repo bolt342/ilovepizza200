@@ -1,6 +1,5 @@
 /// execute_script.js
 (function() {
-  // Listen for Ctrl + `
   window.addEventListener("keyup", event => {
     if (event.ctrlKey && event.which === 192) {
       createInjectorUI();
@@ -31,7 +30,6 @@
       zIndex: '9999'
     });
 
-    // Title
     const title = document.createElement('div');
     title.textContent = ' c00lgui v2';
     Object.assign(title.style, {
@@ -44,14 +42,12 @@
     });
     panel.appendChild(title);
 
-    // Label
     const label = document.createElement('label');
     label.textContent = 'Inject:';
     label.style.display = 'block';
     label.style.marginBottom = '5px';
     panel.appendChild(label);
 
-    // Textarea
     const textarea = document.createElement('textarea');
     Object.assign(textarea.style, {
       width: '100%',
@@ -65,7 +61,6 @@
     });
     panel.appendChild(textarea);
 
-    // Execute button
     const button = document.createElement('button');
     button.textContent = 'Execute';
     Object.assign(button.style, {
@@ -81,7 +76,6 @@
     });
     panel.appendChild(button);
 
-    // Close button
     const closeBtn = document.createElement('button');
     closeBtn.textContent = 'Close';
     Object.assign(closeBtn.style, {
@@ -99,7 +93,6 @@
 
     document.body.appendChild(panel);
 
-    // Event: Execute code
     button.addEventListener('click', () => {
       let code = textarea.value;
       if (code.startsWith('javascript:')) {
@@ -113,7 +106,6 @@
       }
     });
 
-    // Event: Close panel
     closeBtn.addEventListener('click', () => {
       panel.style.display = 'none';
     });
