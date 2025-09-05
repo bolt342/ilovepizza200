@@ -1,4 +1,4 @@
-// Hotkey listener: Ctrl + `
+/// execute_script.js
 window.addEventListener("keyup", event => {
   if (event.ctrlKey && event.which === 192) {
     createInjectorUI();
@@ -6,13 +6,11 @@ window.addEventListener("keyup", event => {
 });
 
 function createInjectorUI() {
-  // If already exists, just show it
   if (document.getElementById('injector-panel')) {
     document.getElementById('injector-panel').style.display = 'block';
     return;
   }
 
-  // Create container
   const panel = document.createElement('div');
   panel.id = 'injector-panel';
   panel.style.position = 'fixed';
