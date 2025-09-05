@@ -88,8 +88,7 @@ function createInjectorUI() {
       code = code.substring(11);
     }
     try {
-      const fn = new Function(code);
-      fn();
+      Function(code)();
     } catch (err) {
       console.error(err);
       alert('Error: ' + err.message);
